@@ -11,8 +11,8 @@
     <groupId>org.perscholas</groupId>
     <artifactId>GigTaskTracker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>GigTaskTracker</name>
-    <description>Demo project for Spring Boot</description>
+    <name>GugTaskTracker</name>
+    <description>Task Tracker for Gig Workers</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -21,26 +21,36 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.thymeleaf.extras</groupId>
-            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
-        </dependency>
+        <!--		<dependency>-->
+        <!--			<groupId>org.thymeleaf.extras</groupId>-->
+        <!--			<artifactId>thymeleaf-extras-springsecurity5</artifactId>-->
+        <!--		</dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-validation</artifactId>-->
+<!--        </dependency>-->
 
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -53,11 +63,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+        <!--		<dependency>-->
+        <!--			<groupId>org.springframework.security</groupId>-->
+        <!--			<artifactId>spring-security-test</artifactId>-->
+        <!--			<scope>test</scope>-->
+        <!--		</dependency>-->
     </dependencies>
 
     <build>
@@ -65,6 +75,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.5.0</version>
                 <configuration>
                     <excludes>
                         <exclude>
@@ -78,3 +89,4 @@
     </build>
 
 </project>
+
