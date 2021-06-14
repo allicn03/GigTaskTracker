@@ -4,26 +4,27 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
 @Entity
-@Table(name="groups")
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level= AccessLevel.PRIVATE)
 @Getter
 @Setter
-public class Group {
+public class Budget {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Column(name="budget_id")
     Long id;
     String name;
+    @ManyToMany
+    @JoinTable(inverseJoinColumns = @JoinColumn(name="user_id"), joinColumns=@JoinColumn(name="budget_id"))
+    Set<User> users = new HashSet<>();
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="budget")
+    Set<Group> groups = new TreeSet<>();
 
-    @ManyToOne
-    Budget budget;
-
-    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "group")
-    Set<Category> categories = new TreeSet<>();
 }

@@ -22,7 +22,9 @@ public class User {
     String username;
     String password;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    Set<Group> groups = new TreeSet<>();
+    @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="users")
+    Set<Budget> budgets = new TreeSet<>();
+
+
 
 }
