@@ -3,8 +3,10 @@ package org.perscholas.gigtasktracker.Models;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 @Entity
@@ -25,6 +27,7 @@ public class User {
     @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="users")
     Set<Budget> budgets = new TreeSet<>();
 
-
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="user")
+    Set<Authority> authorities = new HashSet<>();
 
 }
