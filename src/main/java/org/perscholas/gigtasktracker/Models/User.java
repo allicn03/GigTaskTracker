@@ -23,6 +23,8 @@ public class User {
     Long id;
     String username;
     String password;
+    @Transient
+    String confirmPassword;
 
     @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="users")
     Set<Budget> budgets = new TreeSet<>();
